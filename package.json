@@ -1,0 +1,14 @@
+{
+  "name": "facetracker",
+  "version": "1.0.0",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && http-server -c-1"
+  },
+  "author": "Emre Yalcin",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "typescript": "^5.3.3"
+  }
+}

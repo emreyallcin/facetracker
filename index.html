@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Emre Yalcin">
+    <title>Face Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh@0.4.1633559619/face_mesh.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3.1640029074/camera_utils.js"></script>
+    <style>
+        body {
+            text-align: center;
+            background: white;
+            font-family: Arial;
+            margin: 0;
+            padding: 20px;
+            background-image: url(neu2.png);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #f0f0f0;
+            padding: 20px;
+            border: 1px solid black;
+        }
+        h1 {
+            color: black;
+            margin-bottom: 20px;
+        }
+        #video-container {
+            position: relative;
+            width: 640px;
+            height: 480px;
+            margin: 20px auto;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+        #webcam {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: scaleX(-1);
+        }
+        #canvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: scaleX(-1);
+        }
+        #status {
+            margin: 10px;
+            padding: 15px;
+            border: 1px solid black;
+            background: white;
+            font-size: 16px;
+            min-height: 20px;
+        }
+        #custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        .instructions {
+            margin-top: 20px;
+            padding: 5px;
+            background: white;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Face Tracker</h1>
+        <div class="instructions">
+            <h2>How to Use</h2>
+            <p>Move your head to control the cursor</p>
+            <p>Smile to left click</p>
+            <p>Raise your eyebrows to right click</p>
+        </div>
+        <div id="video-container">
+            <video id="webcam" playsinline></video>
+            <canvas id="canvas"></canvas>
+        </div>
+        <div id="status">Starting...</div>
+    </div>
+    <div id="custom-cursor"></div>
+    <script type="module" src="dist/app.js"></script>
+</body>
+</html> 
